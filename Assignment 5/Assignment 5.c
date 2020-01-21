@@ -9,6 +9,7 @@ probation period is over, assuming that probation period is of 90 days from date
 of joining.*/
 typedef enum{EXIT,INPUT_EMPLOYEE_INFORMATION,DISPLAY_EMPLOYEE_INFORMATION}MENU;
 
+
 typedef struct date
 {
 	int dd; 
@@ -60,9 +61,23 @@ typedef struct employee
 
  	SYSTEMTIME str_t;
 	GetSystemTime(&str_t);
-	printf("Employee Experience till date[in months] : %d\n",str_t.wMonth - employ->Date_Of_Joining.mm );
+	if(employ->Date_Of_Joining.yyyy != str_t.wYear)
 
-	printf("Ending month of probation period : %d\n",employ->Date_Of_Joining.mm + 3 );
+	employee_experience_till_date = ((employ->Date_Of_Joining.mm + str_t.wMonth)%12)+(((str_t.wYear - employ->Date_Of_Joining.yyyy)-1)*12);
+	printf("Employee Experience till date[in months] : %d\n",employee_experience_till_date );
+	ending_month_of_probation_period = (employ->Date_Of_Joining.mm + 3)%12;
+	/*for(int i=0;i<3;i++)
+		{
+			if(1<=ending_month_of_probation_period<12)
+			{
+				ending_month_of_probation_period++;
+			}
+			else if(ending_month_of_probation_period==12)
+			{
+				ending_month_of_probation_period=1;
+			}
+		}*/
+	printf("Ending month of probation period : %d\n",ending_month_of_probation_period);
  }
 
 int options() 

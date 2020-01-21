@@ -10,9 +10,9 @@ of joining.*/
 typedef enum{EXIT,INPUT_EMPLOYEE_INFORMATION,DISPLAY_EMPLOYEE_INFORMATION}MENU;
 
 
-typedef struct date
-{
-	int dd; 
+typedef struct date 
+{  
+	int dd;  
 	int mm; 
 	int yyyy;
 }DATE1; 
@@ -59,18 +59,18 @@ typedef struct employee
  	int ending_month_of_probation_period;
  	printf("The Age of person at time of joining[in years] is: %d\n",employ->Date_Of_Joining.yyyy - employ->Date_Of_Birth.yyyy );
 
- 	SYSTEMTIME str_t;
+ 	SYSTEMTIME str_t; 
 	GetSystemTime(&str_t);
 	if(employ->Date_Of_Joining.yyyy != str_t.wYear)
 
-	employee_experience_till_date = ((employ->Date_Of_Joining.mm + str_t.wMonth)%12)+(((str_t.wYear - employ->Date_Of_Joining.yyyy)-1)*12);
+	employee_experience_till_date = (str_t.wYear*12 + str_t.wMonth)- (employ->Date_Of_Joining.yyyy*12 +employ->Date_Of_Joining.mm);
 	printf("Employee Experience till date[in months] : %d\n",employee_experience_till_date );
 	ending_month_of_probation_period = (employ->Date_Of_Joining.mm + 3)%12;
-	/*for(int i=0;i<3;i++)
+	/*for(int i=0;i<3;i++) 
 		{
 			if(1<=ending_month_of_probation_period<12)
 			{
-				ending_month_of_probation_period++;
+				ending_month_of_probation_period++; 
 			}
 			else if(ending_month_of_probation_period==12)
 			{

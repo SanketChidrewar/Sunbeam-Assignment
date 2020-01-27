@@ -1,0 +1,11 @@
+movieid,title,genres
+1,toy story (1995),adventure|animation|children|comedy|fantasy
+2,jumanji (1995),adventure|children|fantasy
+3,grumpier old men (1995),comedy|romance
+4,waiting to exhale (1995),comedy|drama|romance
+5,father of the bride part ii (1995),comedy
+6,heat (1995),action|crime|thriller
+7,sabrina (1995),comedy|romance
+8,tom and huck (1995),adventure|children
+9,sudden death (1995),action
+10,goldeneye (1995),action|adventure|thriller
